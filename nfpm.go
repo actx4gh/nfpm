@@ -304,9 +304,6 @@ func (c *Config) expandEnvVars() {
 		c.XBPS.Signature.KeyPassphrase = nfpmXBPSPassphrase
 	}
 
-	// RPM specific
-	c.RPM.Packager = os.Expand(c.RPM.Packager, c.envMappingFunc)
-
 	// MSIX specific
 	c.MSIX.Signature.PFXFile = os.Expand(c.MSIX.Signature.PFXFile, c.envMappingFunc)
 	c.MSIX.Publisher = os.Expand(c.MSIX.Publisher, c.envMappingFunc)
